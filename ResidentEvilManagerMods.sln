@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResidentEvilManagerMods", "ResidentEvilManagerMods\ResidentEvilManagerMods.csproj", "{61A0BF3A-28F4-403B-BB53-CF62CE61DED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Update", "Update\Update.csproj", "{2DA8AFBD-E5A8-4B84-8984-A920E51C004F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ResidenEvilMangaerMods Installer", "ResidenEvilMangaerMods Installer\ResidenEvilMangaerMods Installer.vdproj", "{3662056D-4318-43F9-B782-8DEC8B270912}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A0BF3A-28F4-403B-BB53-CF62CE61DED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A0BF3A-28F4-403B-BB53-CF62CE61DED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A0BF3A-28F4-403B-BB53-CF62CE61DED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A0BF3A-28F4-403B-BB53-CF62CE61DED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA8AFBD-E5A8-4B84-8984-A920E51C004F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA8AFBD-E5A8-4B84-8984-A920E51C004F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA8AFBD-E5A8-4B84-8984-A920E51C004F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA8AFBD-E5A8-4B84-8984-A920E51C004F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3662056D-4318-43F9-B782-8DEC8B270912}.Debug|Any CPU.ActiveCfg = Debug
+		{3662056D-4318-43F9-B782-8DEC8B270912}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C002B2B-F770-45DC-9E59-4FA03C05C977}
+	EndGlobalSection
+EndGlobal

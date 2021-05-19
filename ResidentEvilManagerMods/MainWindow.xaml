@@ -1,0 +1,69 @@
+﻿<Window x:Class="ResidentEvilManagerMods.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResidentEvilManagerMods"
+        mc:Ignorable="d"
+        Title="Residen Evil Mod Manager" Height="450" Width="800" ResizeMode="CanMinimize" WindowStyle="None"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="#484848">
+        <local:ModsPanel x:Name="modsPanel" Margin="200,30,0,0"/>
+        <materialDesign:Card HorizontalAlignment="Left" Width="200" Foreground="White" Background="#FF212121">
+            <StackPanel Height="208" Margin="0,85,0,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True">
+                <Button Height="50" Background="#212121" BorderBrush="White" Margin="-6,0">
+                    <StackPanel Orientation="Horizontal" Width="190">
+                        <materialDesign:PackIcon Kind="FormatListText" Height="42" Width="42"/>
+                        <Label Content="Mods" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+                <Button Height="50" Background="#212121" Foreground="#DDFFFFFF" BorderBrush="White" Margin="-6,0" Click="Open_Settings">
+                    <StackPanel Orientation="Horizontal" Width="190">
+                        <materialDesign:PackIcon Kind="Settings" Height="42" Width="42"/>
+                        <Label Content="Ajustes" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+                <Button Height="50" Background="#212121" Foreground="#DDFFFFFF" BorderBrush="White" Margin="-6,0" Click="Open_Info">
+                    <StackPanel Orientation="Horizontal" Width="190">
+                        <materialDesign:PackIcon Kind="Information" Height="42" Width="42"/>
+                        <Label Content="Informacion " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:DialogHost x:Name="Dialogos">
+        </materialDesign:DialogHost>
+        <materialDesign:DialogHost x:Name="log" Margin="0,0,0,0" OverlayBackground="Black">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel x:Name="UILog" Width="400" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF2F3640">
+                    <StackPanel Margin="0,60,0,0">
+                        <TextBlock x:Name="mensaje" Text="Seguron que quieres abortar la descarga?" HorizontalAlignment="Center" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                    <StackPanel x:Name="respuestasS_N" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed">
+                        <Button x:Name="true_button" Margin="10,0,10,0" Content="Ok" Width="100" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Click="Button_Click_1"/>
+                        <Button x:Name="false_button" Margin="10,0,10,0" Content="Cancelar" Width="100" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Background="#FFEE5253" Click="Button_Click_2"/>
+                    </StackPanel>
+                    <StackPanel x:Name="BarradeProgreso" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0" IsEnabled="False" Visibility="Collapsed">
+                        <ProgressBar x:Name="progreso" Width="300" Background="#FF74B9FF" BorderBrush="#FF74B9FF" Foreground="#FF00B894" Value="50" IsIndeterminate="True"/>
+                    </StackPanel>
+                    <StackPanel x:Name="VerCambios" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,0" IsEnabled="False" Visibility="Collapsed">
+                        <TextBlock x:Name="Cambios" Padding="0, 5, 0, 20" Text="Cambios" HorizontalAlignment="Center" Foreground="#DDFFFFFF" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <materialDesign:Card Margin="0,0,0,0" Height="29" VerticalAlignment="Top" Background="Black" MouseDown="Card_MouseDown">
+            <Grid>
+                <Button x:Name="exitButton" Margin="758,4,14,4" Height="Auto" Padding="4" Background="#FFE74C3C" BorderBrush="#FFE74C3C" Foreground="#DD000000" Click="exit">
+                    <materialDesign:PackIcon Height="14" Kind="WindowClose"/>
+                </Button>
+                <Button x:Name="MinimizeButton" Margin="722,4,50,4" Height="Auto" Padding="4" Background="#FFF1C40F" BorderBrush="#FFF1C40F" Click="minimize">
+                    <materialDesign:PackIcon Height="14" Kind="WindowMinimize" Foreground="#DD000000"/>
+                </Button>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>

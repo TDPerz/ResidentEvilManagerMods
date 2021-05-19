@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ResidentEvilManagerMods.ModsPanel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ResidentEvilManagerMods"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <materialDesign:DrawerHost x:Name="Drawhost">
+            <materialDesign:DrawerHost.RightDrawerContent>
+                <Grid x:Name="drawHostUi" Background="#212121" Width="462">
+                    <Image Margin="14,14,0,0" Height="168" VerticalAlignment="Top" HorizontalAlignment="Left" Width="296" Source="{Binding miniatura}"/>
+                    <TextBlock Margin="18,199,18,0" FontFamily="Roboto Black" Text="{Binding titulo}" FontSize="20" Foreground="#DDFFFFFF" Height="46" VerticalAlignment="Top" IsManipulationEnabled="True" Focusable="True"/>
+                    <TextBlock Margin="30,244,30,17" TextWrapping="Wrap" Text="{Binding descripcion}" FontSize="16" Foreground="#DDFFFFFF" VerticalAlignment="Top" Height="167" IsManipulationEnabled="True" Cursor="IBeam"/>
+                    <Button x:Name="Download_Button" Margin="0,131,15,0" Height="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" HorizontalAlignment="Right" Width="130" VerticalAlignment="Top" Click="Download_Button_Click" Background="#FF484848" BorderBrush="#FF484848">
+                        <Button.Content>
+                            <StackPanel Margin="0" Orientation="Horizontal" VerticalAlignment="Center" Width="130">
+                                <materialDesign:PackIcon Margin="0" Height="34" Width="48" Kind="Download"/>
+                                <TextBlock Text="Descargar" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </materialDesign:DrawerHost.RightDrawerContent>
+            <ScrollViewer Margin="30,20,30,20">
+                <StackPanel x:Name="viewListPanel" Orientation="Vertical" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" CanVerticallyScroll="True">
+                </StackPanel>
+            </ScrollViewer>
+        </materialDesign:DrawerHost>
+        <materialDesign:DialogHost x:Name="log" CloseOnClickAway="True" DialogClosing="log_DialogClosing">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel x:Name="UILog" Width="400" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Margin="0,60,0,0">
+                        <TextBlock x:Name="mensaje" Text="Seguron que quieres abortar la descarga?" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel x:Name="YesNoStack" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Visible">
+                        <Button x:Name="Ok_Button" Margin="10,0,10,0" Content="Ok" Width="100" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+                        <Button x:Name="Cancel_Button" Margin="10,0,10,0" Content="Cancelar" Width="100" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Background="#FFEE5253"/>
+                    </StackPanel>
+                    <StackPanel x:Name="Progreso" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed">
+                        <Label x:Name="contador" Content="0Mb"/>
+                        <ProgressBar x:Name="barraProgreso" Width="200"/>
+                        <Label x:Name="total" Content="100Mb"/>
+                    </StackPanel>
+                    <StackPanel x:Name="OneButton" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed">
+                        <Button x:Name="Ok_Only_Button" Margin="10,0,10,0" Content="Ok" Width="100" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+    </Grid>
+</UserControl>
