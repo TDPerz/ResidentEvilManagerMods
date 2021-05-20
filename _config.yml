@@ -3,4 +3,4 @@ theme: jekyll-theme-slate
 title: [Residente del mal xd]
 description: [A short description of your site's purpose]
 
-show_Download: true
+<a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
